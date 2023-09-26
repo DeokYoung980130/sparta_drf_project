@@ -5,7 +5,7 @@ from users.models import User
 class Article(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     title=models.CharField(max_length=50)
-    content=models.TextField()
+    content=models.TextField(blank=True)
     image=models.ImageField(blank=True, upload_to="%Y/%m/")
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
